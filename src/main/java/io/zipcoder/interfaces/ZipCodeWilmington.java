@@ -17,14 +17,22 @@ public class ZipCodeWilmington {
     public static Instructors getInstructors(){return instructors;}
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture(students, numberOfHours);
+        Learner[] learners = students.personList.toArray(new Learner[0]);
+        teacher.lecture(learners, numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){
+        Learner[] learners = students.personList.toArray(new Learner[0]);
+        Instructor instructor = (Instructor) instructors.findById(id);
+        instructor.lecture(learners, numberOfHours);
 
     }
 
-    public Map getStudyMap(){
-        return new HashMap<Student, Double>();
+    public Map<Student, Double> getStudyMap(){
+        Map<Student, Double> studyMap = new HashMap<>();
+        for(Student student : students.personList){
+            studyMap.put(student, student.getTotalStudyTime());
+        }
+        return studyMap;
     }
 }
