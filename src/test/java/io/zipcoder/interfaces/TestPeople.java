@@ -6,63 +6,63 @@ import org.junit.Test;
 public class TestPeople {
     @Test
     public void testAdd(){
-        Person person1 = new Person(1, "Matt");
-        Person person2 = new Person(2, "Alice");
-        Person person3 = new Person(3, "Jenn");
-        People people = new People();
-        Integer expected = 3;
+        Student person1 = new Student(1, "Matt", 0.0);
+        Student person2 = new Student(2, "Alice", 0.0);
+        Student person3 = new Student(3, "Jenn", 0.0);
+        Students students = Students.getInstance();
+        Integer expected = 23;
 
-        people.add(person1);
-        people.add(person2);
-        people.add(person3);
-        Integer actual = people.count();
-
-        Assert.assertEquals(expected, actual);
-    }
-    @Test
-    public void testRemovePerson(){
-        Person person1 = new Person(1, "Matt");
-        Person person2 = new Person(2, "Alice");
-        Person person3 = new Person(3, "Jenn");
-        People people = new People();
-        Integer expected = 2;
-
-        people.add(person1);
-        people.add(person2);
-        people.add(person3);
-        people.remove(person2);
-        Integer actual = people.count();
+        students.add(person1);
+        students.add(person2);
+        students.add(person3);
+        Integer actual = students.count();
 
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void testRemovePersonById(){
-        Person person1 = new Person(1, "Matt");
-        Person person2 = new Person(2, "Alice");
-        Person person3 = new Person(3, "Jenn");
-        People people = new People();
-        Integer expected = 2;
+    public void testRemoveStudent(){
+        Student person1 = new Student(21, "Matt", 0.0);
+        Student person2 = new Student(22, "Alice", 0.0);
+        Student person3 = new Student(23, "Jenn", 0.0);
+        Students students = Students.getInstance();
+        Integer expected = 22;
 
-        people.add(person1);
-        people.add(person2);
-        people.add(person3);
-        people.remove(2);
-        Integer actual = people.count();
+        students.add(person1);
+        students.add(person2);
+        students.add(person3);
+        students.remove(person2);
+        Integer actual = students.count();
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testRemoveStudentById(){
+        Student person1 = new Student(21, "Matt", 0.0);
+        Student person2 = new Student(22, "Alice", 0.0);
+        Student person3 = new Student(23, "Jenn", 0.0);
+        Students students = Students.getInstance();
+        Integer expected = 22;
+
+        students.add(person1);
+        students.add(person2);
+        students.add(person3);
+        students.remove(22);
+        Integer actual = students.count();
 
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testFindById(){
-        Person person1 = new Person(1, "Matt");
-        Person person2 = new Person(2, "Alice");
-        Person person3 = new Person(3, "Jenn");
-        People people = new People();
-        Person expected = person2;
+        Student person1 = new Student(21, "Matt", 0.0);
+        Student person2 = new Student(22, "Alice", 0.0);
+        Student person3 = new Student(23, "Jenn", 0.0);
+        Students students = Students.getInstance();
+        Student expected = person2;
 
-        people.add(person1);
-        people.add(person2);
-        people.add(person3);
-        Person actual = people.findById(2);
+        students.add(person1);
+        students.add(person2);
+        students.add(person3);
+        Student actual = students.findById(22);
 
         Assert.assertEquals(expected, actual);
     }

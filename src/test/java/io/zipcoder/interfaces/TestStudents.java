@@ -11,7 +11,7 @@ public class TestStudents {
     @Test
     public void testStudentsSingleton1(){
         Students students = Students.getInstance();
-        List<Person> actualStudents = students.personList;
+        List<Student> actualStudents = students.personList;
         
         List<Person> expectedStudents = new ArrayList<>();
         expectedStudents.add(new Student(1, "Matt", 0.0));

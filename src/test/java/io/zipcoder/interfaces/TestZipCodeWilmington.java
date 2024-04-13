@@ -17,7 +17,7 @@ public class TestZipCodeWilmington {
         Students students = ZipCodeWilmington.getStudents();
 
         // Get the list of students
-        List<Person> studentList = students.personList;
+        List<Student> studentList = students.personList;
 
         // Choose an instructor
         Instructor instructor = (Instructor) ZipCodeWilmington.getInstructors().findById(1);
