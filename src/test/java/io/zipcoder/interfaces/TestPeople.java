@@ -16,6 +16,9 @@ public class TestPeople {
         students.add(person2);
         students.add(person3);
         Integer actual = students.count();
+        students.remove(person1);
+        students.remove(person2);
+        students.remove(person3);
 
         Assert.assertEquals(expected, actual);
     }
@@ -32,6 +35,8 @@ public class TestPeople {
         students.add(person3);
         students.remove(person2);
         Integer actual = students.count();
+        students.remove(person1);
+        students.remove(person3);
 
         Assert.assertEquals(expected, actual);
     }
@@ -48,6 +53,8 @@ public class TestPeople {
         students.add(person3);
         students.remove(22);
         Integer actual = students.count();
+        students.remove(21);
+        students.remove(23);
 
         Assert.assertEquals(expected, actual);
     }
@@ -63,6 +70,9 @@ public class TestPeople {
         students.add(person2);
         students.add(person3);
         Student actual = students.findById(22);
+        students.remove(person1);
+        students.remove(person2);
+        students.remove(person3);
 
         Assert.assertEquals(expected, actual);
     }

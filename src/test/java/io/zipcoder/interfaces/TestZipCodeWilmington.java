@@ -1,18 +1,19 @@
 package io.zipcoder.interfaces;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class TestZipCodeWilmington {
 
     @Test
     public void testHostLecture() {
-        // Create a ZipCodeWilmington instance
         ZipCodeWilmington zipCodeWilmington = ZipCodeWilmington.getInstance();
-
+        Educator educator = Educator.DOLIO;
         // Get the instance of students
         Students students = ZipCodeWilmington.getStudents();
 
@@ -20,7 +21,7 @@ public class TestZipCodeWilmington {
         List<Student> studentList = students.personList;
 
         // Choose an instructor
-        Instructor instructor = (Instructor) ZipCodeWilmington.getInstructors().findById(1);
+        Instructor instructor = educator.getInstructor();
 
         // Specify the number of hours
         double numberOfHours = 10.0;
