@@ -30,8 +30,11 @@ public class ZipCodeWilmington {
 
     public Map<Student, Double> getStudyMap(){
         Map<Student, Double> studyMap = new HashMap<>();
-        for(Student student : students.personList){
-            studyMap.put(student, student.getTotalStudyTime());
+        for(Person person : students.personList){
+            if(person instanceof Student) {
+                Student student = (Student) person;
+                studyMap.put(student, student.getTotalStudyTime());
+            }
         }
         return studyMap;
     }
